@@ -185,8 +185,9 @@ export const brainProgression = () => {
   const target = getRandomInt(1, 10);
   const miss = arr[target];
   arr[target] = '..';
+  const str = arr.join(' ');
 
-  const answer = readlineSync.question(`Question: ${arr} \nYour answer: `);
+  const answer = readlineSync.question(`Question: ${str} \nYour answer: `);
 
   if (Number(answer) === miss) {
     console.log('Correct!');
