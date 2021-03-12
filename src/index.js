@@ -25,6 +25,10 @@ export const brainGCDTask = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
 
+export const brainProgressionTask = () => {
+  console.log('What number is missing in the progression?');
+};
+
 // Random number
 const getRandomInt = (min, max) => {
   const low = Math.ceil(min);
@@ -151,6 +155,40 @@ export const brainGCD = () => {
 
   if (Number(answer) !== solution) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
+    return false;
+  }
+
+  return null;
+};
+
+// brain-progression
+export const brainProgression = () => {
+  const arr = [];
+
+  const begin = getRandomInt(2, 50);
+  const counter = getRandomInt(2, 5);
+
+  arr.push(begin);
+
+  let result = begin + counter;
+  do {
+    arr.push(result);
+    result += counter;
+  } while (arr.length < 10);
+
+  const target = getRandomInt(1, 10);
+  const miss = arr[target];
+  arr[target] = '..';
+
+  const answer = readlineSync.question(`Question: ${arr} \nYour answer: `);
+
+  if (Number(answer) === miss) {
+    console.log('Correct!');
+    return true;
+  }
+
+  if (Number(answer) !== miss) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${miss}'.`);
     return false;
   }
 
