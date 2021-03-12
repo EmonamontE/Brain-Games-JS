@@ -21,6 +21,10 @@ export const brainCalcTask = () => {
   console.log('What is the result of the expression?');
 };
 
+export const brainGCDTask = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+};
+
 // Random number
 const getRandomInt = (min, max) => {
   const low = Math.ceil(min);
@@ -105,6 +109,40 @@ export const brainCalc = () => {
   }
 
   const answer = readlineSync.question(`Question: ${expression} \nYour answer: `);
+
+  if (Number(answer) === solution) {
+    console.log('Correct!');
+    return true;
+  }
+
+  if (Number(answer) !== solution) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
+    return false;
+  }
+
+  return null;
+};
+
+// brain-gcd
+export const brainGCD = () => {
+  const firstInt = getRandomInt(1, 100);
+  const secondInt = getRandomInt(1, 100);
+
+  let counter;
+  if (firstInt >= secondInt) {
+    counter = secondInt;
+  } else {
+    counter = firstInt;
+  }
+
+  let solution;
+  for (let i = 1; i <= counter; i += 1) {
+    if (firstInt % i === 0 && secondInt % i === 0) {
+      solution = i;
+    }
+  }
+
+  const answer = readlineSync.question(`Question: ${firstInt}  ${secondInt} \nYour answer: `);
 
   if (Number(answer) === solution) {
     console.log('Correct!');
