@@ -73,7 +73,7 @@ export const brainEven = () => {
 
   const evenOdd = (value) => value % 2 === 0;
 
-  const answer = readlineSync.question(`${num} \nYour answer: `);
+  const answer = readlineSync.question(`Question: ${num} \nYour answer: `);
 
   if (evenOdd(num) === true && answer === 'yes') {
     console.log('Correct!');
