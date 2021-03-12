@@ -29,6 +29,10 @@ export const brainProgressionTask = () => {
   console.log('What number is missing in the progression?');
 };
 
+export const brainPrimeTask = () => {
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+};
+
 // Random number
 const getRandomInt = (min, max) => {
   const low = Math.ceil(min);
@@ -43,7 +47,6 @@ const getRandomOper = () => {
 };
 
 // Prime number
-/*
 const isPrime = (value) => {
   let result = 0;
 
@@ -53,13 +56,16 @@ const isPrime = (value) => {
     }
   }
 
+  /*
   if (result > 2) {
     return false;
   } else {
     return true;
   }
+  */
+
+  return (!(result > 2));
 };
-*/
 
 // Brain-even.js
 export const brainEven = () => {
@@ -189,6 +195,35 @@ export const brainProgression = () => {
 
   if (Number(answer) !== miss) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${miss}'.`);
+    return false;
+  }
+
+  return null;
+};
+
+// brain-prime
+export const brainPrime = () => {
+  const num = getRandomInt(2, 200);
+
+  const answer = readlineSync.question(`Question: ${num} \nYour answer: `);
+
+  if (isPrime(num) === true && answer === 'yes') {
+    console.log('Correct!');
+    return true;
+  }
+
+  if (isPrime(num) === true && answer === 'no') {
+    console.log('"no" is wrong answer ;(. Correct answer was "yes".');
+    return false;
+  }
+
+  if (isPrime(num) !== true && answer === 'no') {
+    console.log('Correct!');
+    return true;
+  }
+
+  if (isPrime(num) !== true && answer === 'yes') {
+    console.log('"yes" is wrong answer ;(. Correct answer was "no".');
     return false;
   }
 
