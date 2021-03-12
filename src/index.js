@@ -126,7 +126,7 @@ export const brainCalc = () => {
   }
 
   if (Number(answer) !== solution) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.\nLet's try again, ${name}!`);
     return false;
   }
 
@@ -160,7 +160,7 @@ export const brainGCD = () => {
   }
 
   if (Number(answer) !== solution) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.\nLet's try again, ${name}!`);
     return false;
   }
 
@@ -194,7 +194,7 @@ export const brainProgression = () => {
   }
 
   if (Number(answer) !== miss) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${miss}'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${miss}'.\nLet's try again, ${name}!`);
     return false;
   }
 
@@ -213,7 +213,7 @@ export const brainPrime = () => {
   }
 
   if (isPrime(num) === true && answer === 'no') {
-    console.log('"no" is wrong answer ;(. Correct answer was "yes".');
+    console.log(`"no" is wrong answer ;(. Correct answer was "yes".\nLet's try again, ${name}!`);
     return false;
   }
 
@@ -223,7 +223,7 @@ export const brainPrime = () => {
   }
 
   if (isPrime(num) !== true && answer === 'yes') {
-    console.log('"yes" is wrong answer ;(. Correct answer was "no".');
+    console.log(`"yes" is wrong answer ;(. Correct answer was "no".\nLet's try again, ${name}!`);
     return false;
   }
 
