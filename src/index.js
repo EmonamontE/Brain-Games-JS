@@ -152,7 +152,7 @@ export const brainGCD = () => {
     }
   }
 
-  const answer = readlineSync.question(`Question: ${firstInt} ${secondInt}\nYour answer: `);
+  const answer = readlineSync.question(`Question: ${firstInt} ${secondInt} \nYour answer: `);
 
   if (Number(answer) === solution) {
     console.log('Correct!');
